@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const PAGE_COUNT = 20000;
+const PAGES = new Array(PAGE_COUNT).fill(0).map((_x, i) => ({id: `page-${i + 1}`, data: Math.random()}));
+fs.writeFileSync(__dirname + '/content/data.json', JSON.stringify(PAGES));

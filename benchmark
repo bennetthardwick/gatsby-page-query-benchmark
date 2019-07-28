@@ -1,0 +1,16 @@
+#!/bin/bash
+
+rm -r .cache
+rm -r ./public
+
+if [ "$1" = "pageContext" ]; then
+  echo "Benchmarking page context"
+
+  USE_CREATE_PAGES=true yarn build
+else
+  echo "Benchmarking page query"
+
+  yarn build
+fi
+
+
